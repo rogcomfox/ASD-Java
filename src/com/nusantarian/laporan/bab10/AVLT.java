@@ -157,6 +157,13 @@ public class AVLT {
         else return 1 + jumlahNode(node.pKiri) + jumlahNode(node.pKanan);
     }
 
+    public static int maxTinggi(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(maxTinggi(root.pKiri), maxTinggi(root.pKanan));
+    }
+
     public static void main (String[] args) {
         AVLT t = new AVLT();
         t.sisipDt(3);t.inOrderTraversal();System.out.println();
@@ -168,5 +175,6 @@ public class AVLT {
         t.sisipDt(20); t.inOrderTraversal();System.out.println();
         t.sisipDt(17); t.inOrderTraversal();System.out.println();
         t.sisipDt(25);t.inOrderTraversal();System.out.println();
+        System.out.println("Ketinggian Maksimum = " + maxTinggi(t.root));
     }
 }
