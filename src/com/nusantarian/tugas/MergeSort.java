@@ -1,7 +1,5 @@
 package com.nusantarian.tugas;
 
-import java.util.Arrays;
-
 public class MergeSort {
     private static void mergeSort(int[] arr, int left, int right) {
         if (right <= left) return;
@@ -47,10 +45,18 @@ public class MergeSort {
         }
     }
 
+    private static String ArraytoInteger(int[] arr){
+        if (null == arr || 0 == arr.length) return " ";
+        StringBuilder s = new StringBuilder();
+        s.append(arr[0]);
+        for (int i = 1; i < arr.length; i++) s.append(" ").append(arr[i]);
+        return s.toString();
+    }
+
     public static void main(String[] args) {
         int[] sample_arr = {6, 8, 4, 9, 5, 3, 7, 8, 1};
-        System.out.println("Array Sebelum Di Sorting\n" + Arrays.toString(sample_arr));
+        System.out.println("Array Sebelum Di Sorting\n" + ArraytoInteger(sample_arr));
         mergeSort(sample_arr, 0, sample_arr.length - 1);
-        System.out.println("Array Sesudah Di Sorting\n" + Arrays.toString(sample_arr));
+        System.out.println("Array Sesudah Di Sorting\n" + ArraytoInteger(sample_arr));
     }
 }
