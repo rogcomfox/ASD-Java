@@ -1,6 +1,7 @@
 package com.nusantarian.tugas;
 
 public class MergeSort {
+    //method untuk dipanggil pada method main
     private static void mergeSort(int[] arr, int left, int right) {
         if (right <= left) return;
 
@@ -9,7 +10,7 @@ public class MergeSort {
         mergeSort(arr, mid + 1, right);
         merge(arr, left, mid, right);
     }
-
+    //algoritma dari merge-sort
     private static void merge(int[] arr, int left, int mid, int right) {
         //membuat array sementara untuk array kiri dan kanan
         int[] left_arr = new int[mid - left + 1];
@@ -44,7 +45,7 @@ public class MergeSort {
             }
         }
     }
-
+    //merubah nilai array String pada integer
     private static String ArraytoInteger(int[] arr){
         if (null == arr || 0 == arr.length) return " ";
         StringBuilder s = new StringBuilder();
